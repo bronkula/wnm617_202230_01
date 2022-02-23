@@ -2,6 +2,8 @@
 
 ## Class Project Mobile Tech
 
+This class is so super cool
+
 ## Important (Cool) Links
 
 - https://hdraws.com
