@@ -9,4 +9,5 @@
 
 ## Side Assignments
 
+- https://hdraws.com/aau/wnm617/cline.hamilton/profile
 - https://hdraws.com/aau/wnm617/cline.hamilton/csszengarden
