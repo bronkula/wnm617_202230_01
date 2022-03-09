@@ -44,27 +44,6 @@ a:hover {
 
 
 
-
-/* Layout Classes */
-
-.hidden { display:none; }
-
-.display-flex { display:flex; }
-.display-block { display:block; }
-.display-inline-flex { display:inline-flex; }
-.display-inline-block { display:inline-block; }
-
-.flex-stretch { flex: 1 1 auto; }
-.flex-none { flex:none; }
-
-.flex-align-center { align-items:center; }
-.flex-justify-center { justify-content:center; }
-
-.flex-column { flex-direction:column; }
-
-
-
-
 /* Forms */
 
 .form-control {
@@ -101,7 +80,8 @@ a:hover {
 
 
 
-#signin-form {
+#signin-form,
+#signup-form {
    padding: 1em;
 }
 
@@ -165,3 +145,131 @@ a:hover {
    display: block;
    padding: 0 1em;
 }
+
+
+
+
+/* Modals */
+.modal {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   transition: all 0.2s;
+   opacity: 0;
+   z-index: 10;
+}
+.modal.active {
+   opacity: 1;
+   pointer-events: initial;
+}
+.modal-back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.7);
+}
+.modal-back.transparent {
+   background-color: transparent;
+}
+.modal-back.passthrough {
+   pointer-events: none;
+}
+
+.modal-popup {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, calc(-50% + 3em));
+   width: calc(100vw - 3em);
+   max-height: calc(100vh - 3em);
+   overflow: hidden;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   transition: all 0.4s;
+}
+.modal.active .modal-popup {
+   transform: translate(-50%, -50%);
+}
+.modal-head,
+.modal-foot {
+   background-color: var(--color-neutral-lighter);
+   line-height: 2rem;
+   padding: 0 1em;
+}
+.modal-body {
+   background-color: white;
+   flex: 1 1 100%;
+   padding: 1em;
+}
+
+.modal-drawer {
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   transition: all 0.3s;
+   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.modal-drawer.left,
+.modal-drawer.right {
+   height: 100%;
+   width: 70vw;
+}
+.modal-drawer.left { left:0; transform:translateX(-100%); }
+.modal-drawer.right { right:0; transform:translateX(100%); }
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+   height: 40vh;
+   width: 100%;
+}
+.modal-drawer.top { top:0; transform:translateY(-100%); }
+.modal-drawer.bottom { bottom:0; transform:translateY(100%); }
+
+.modal.active .modal-drawer {
+   transform: translate(0);
+}
+
+
+
+
+
+
+.map-placeholder {
+   background-image: url(../img/map.jpg);
+   background-position: center;
+   background-size: cover;
+}
+.icon {
+   width: 2rem;
+   height: 2rem;
+}
+
+
+
+
+
+
+/* Layout Classes */
+
+.hidden { display:none; }
+
+.display-flex { display:flex; }
+.display-block { display:block; }
+.display-inline-flex { display:inline-flex; }
+.display-inline-block { display:inline-block; }
+
+.flex-stretch { flex: 1 1 auto; }
+.flex-none { flex:none; }
+
+.flex-align-center { align-items:center; }
+.flex-justify-center { justify-content:center; }
+
+.flex-column { flex-direction:column; }
+.overscroll { overflow:auto; }
