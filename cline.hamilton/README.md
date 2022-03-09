@@ -4,9 +4,12 @@
 
 This class is so super cool
 
-## Important (Cool) Links
+## Portfolio Site
 
 - https://hdraws.com
+
+## Class Project: Animal Tracker
+
 - https://hdraws.com/aau/wnm617/cline.hamilton
 
 ## Side Assignments
