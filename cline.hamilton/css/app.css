@@ -14,7 +14,9 @@
    --color-neutral-medium: #999;
    --color-neutral-dark: #444;
 
-   --color-main-light: #eee;
+   --color-main-light: #f6bed9;
+   --color-main-medium: #e0609d;
+   --color-main-dark: #65163c;
 
    --header-height: 3rem;
 }
@@ -76,6 +78,27 @@ a:hover {
    text-align: center;
    text-decoration: none;
 }
+.hotdog {
+   background-color: white;
+   border-radius: 2em;
+   line-height: 3rem;
+   padding: 0 2em;
+}
+.hotdog input {
+   border-width: 0;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   flex: 1 1 auto;
+   display: block;
+   font: inherit;
+   color: inherit;
+   outline: 0;
+}
+.hotdog.dark {
+   background-color: var(--color-neutral-dark);
+   color: white;
+}
 
 
 
@@ -84,7 +107,17 @@ a:hover {
 #signup-form {
    padding: 1em;
 }
+#recent-search {
+   box-shadow: 0.1em 0.2em 0.4em rgba(0,0,0,0.3);
+}
 
+
+
+
+.recent-search {
+   margin: 1em;
+   display: flex;
+}
 
 
 
@@ -239,6 +272,27 @@ a:hover {
 
 
 
+/* floater */
+.floater { position: absolute; }
+.floater.top { top:1rem }
+.floater.right { right:1rem }
+.floater.bottom { bottom:1rem }
+.floater.left { left:1rem }
+
+
+.circle-button {
+   border-radius: 2rem;
+   line-height: 3rem;
+   font-size: 2.5em;
+   width: 3rem;
+   height: 3rem;
+   text-align: center;
+   background-color: white;
+   box-shadow: 0.1em 0.2em 0.4em rgba(0,0,0,0.2);
+}
+
+
+
 
 
 .map-placeholder {
@@ -249,8 +303,66 @@ a:hover {
 .icon {
    width: 2rem;
    height: 2rem;
+   vertical-align: middle;
 }
 
+
+
+
+
+/* Animal List */
+.animal-list {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   padding: 0 1em;
+   height: 100%;
+   width: 100%;
+   position: relative;
+   overflow: auto;
+}
+.animal-list-item a {
+   display: flex;
+   font-weight: normal;
+   margin: 1em 0;
+   border-radius: 0.5em;
+   overflow: hidden;
+   box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+}
+.animal-list-item a:hover {
+   text-decoration: none;
+}
+.animal-list-image img {
+   width: 6em;
+   vertical-align: text-bottom;
+}
+.animal-list-body {
+   padding: 1em;
+}
+.animal-list-name {
+   font-size: 1.3em;
+}
+
+
+
+
+/* foote nav */
+.nav-icon-set li.active {
+   background-color: var(--color-main-light);
+}
+.nav-icon {
+    line-height: 2rem;
+    display: block;
+}
+.nav-icon .icon {
+    vertical-align: middle;
+    width: 1.5em;
+}
+.nav-icon-label {
+    line-height: 1rem;
+    display: block;
+    font-size: 0.8em;
+}
 
 
 
