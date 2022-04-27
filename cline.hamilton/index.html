@@ -17,8 +17,14 @@
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/maps.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxFlGCvrBiz53-c8WDpV4bryeCiEkdNdc"
+      defer
+    ></script>
 </head>
 <body>
 
@@ -79,7 +85,8 @@
 
 
    <section data-role="page" id="recent-page">
-      <div data-role="main" class="map-placeholder">
+      <div data-role="main">
+         <div class="map"></div>
          <div class="recent-search">
             <form class="hotdog flex-stretch" data-ajax="false" id="recent-search">
                <input type="search" data-role="none" placeholder="Search">
@@ -87,9 +94,6 @@
             <div class="flex-none" style="line-height:3rem;padding:0 0.5em">
                <img src="img/icons/filter.svg" style="vertical-align: middle;" alt="" class="icon">
             </div>
-         </div>
-         <div class="marker" style="position:absolute;top:30vh;left:20vw" data-activate="#map-drawer">
-            <img src="img/icons/marker.svg" alt="" class="icon">
          </div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
