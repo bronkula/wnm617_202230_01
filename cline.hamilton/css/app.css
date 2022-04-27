@@ -197,7 +197,6 @@ a:hover {
 }
 .modal.active {
    opacity: 1;
-   pointer-events: initial;
 }
 .modal-back {
    position: absolute;
@@ -206,6 +205,9 @@ a:hover {
    width: 100%;
    height: 100%;
    background-color: rgba(0,0,0,0.7);
+}
+.modal.active .modal-back {
+   pointer-events: initial;
 }
 .modal-back.transparent {
    background-color: transparent;
@@ -229,6 +231,7 @@ a:hover {
 }
 .modal.active .modal-popup {
    transform: translate(-50%, -50%);
+   pointer-events: initial;
 }
 .modal-head,
 .modal-foot {
@@ -268,6 +271,7 @@ a:hover {
 
 .modal.active .modal-drawer {
    transform: translate(0);
+   pointer-events: initial;
 }
 
 
@@ -436,3 +440,10 @@ a:hover {
 
 .flex-column { flex-direction:column; }
 .overscroll { overflow:auto; }
+
+
+.fill-parent {
+   height: 100%;
+   width: 100%;
+}
+.noclick-children * { pointer-events:none; }

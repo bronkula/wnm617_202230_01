@@ -13,7 +13,10 @@ $(() => {
          case "recent-page": RecentPage(); break;
          case "list-page": ListPage(); break;
          case "user-profile-page": UserProfilePage(); break;
+         case "user-edit-page": UserEditPage(); break;
          case "animal-profile-page": AnimalProfilePage(); break;
+         case "animal-edit-page": AnimalEditPage(); break;
+         case "animal-add-page": AnimalAddPage(); break;
       }
    })
 
@@ -26,6 +29,18 @@ $(() => {
       e.preventDefault();
       checkLoginForm();
    })
+
+
+
+
+
+
+
+   // FORM SUBMISSION CLICKS
+   .on("click", ".js-submit-animal-add", function() {
+      submitAnimalAdd();
+   })
+
 
 
    // CLICKS
