@@ -75,6 +75,10 @@
                <input type="text" id="signup-username" data-role="none" class="form-input" placeholder="Type your Username">
             </div>
             <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input type="email" id="signup-email" data-role="none" class="form-input" placeholder="Type your Email">
+            </div>
+            <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
                <input type="password" id="signup-password" data-role="none" class="form-input" placeholder="Type your Password">
             </div>
@@ -84,8 +88,8 @@
             </div>
             <!-- <input type="submit" data-role="none"> -->
             <div class="form-control">
-               <!-- <button type="button" class="form-button">Submit</button> -->
-               <a href="#recent-page" class="form-button">Sign Up</a>
+               <button type="submit" class="form-button" data-role="none">Sign Up</button>
+               <!-- <a href="#recent-page" class="form-button">Sign Up</a> -->
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em;">
                <p>Already have an account? <a href="#signin-page">Sign In!</a></p>
@@ -173,6 +177,7 @@
       </header>
       <div data-role="main">
          <div class="animal-profile-top">
+            <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src="img/icons/trash.svg" class="icon"></a>
          </div>
          <div class="animal-profile-nav">
             <div class="active">Map</div>
@@ -181,7 +186,7 @@
          <div class="animal-profile-bottom">
             <div class="animal-profile-map active">
                <div class="map map-placeholder"></div>
-               <a href="#choose-location-page" class="floater bottom right circle-button">&plus;</a>
+               <a href="#choose-location-page" class="floater bottom right circle-button js-location-choose-animal">&plus;</a>
             </div>
             <div class="animal-profile-description"></div>
          </div>
@@ -235,7 +240,7 @@
          </ul>
       </header>
       <div data-role="main">
-         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+         <input type="hidden" id="location-animal">
       </div>
    </section>
 
@@ -249,7 +254,9 @@
          </ul>
       </header>
       <div data-role="main">
-         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
+         <div class="map"></div>
       </div>
    </section>
 
@@ -259,11 +266,11 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="">Save</a></li>
+            <li><a href="#" class="js-submit-location-add">Save</a></li>
          </ul>
       </header>
-      <div data-role="main">
-         <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form>
+      <div data-role="main" style="padding:1em">
+         <textarea id="location-description" class="form-input" data-role="none"></textarea>
       </div>
    </section>
 
