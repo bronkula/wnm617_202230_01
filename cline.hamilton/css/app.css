@@ -370,6 +370,7 @@ a:hover {
 }
 .animal-profile-top {
     height: 40vh;
+    position: relative;
 }
 .animal-profile-bottom {
    flex: 1 1 auto;

@@ -2,11 +2,13 @@
 const RecentPage = async() => {
 
 
-   let {result} = await query({
+   let {result,error} = await query({
       type:'recent_animal_locations',
       params:[sessionStorage.userId]
    });
    console.log(result);
+
+   if(error) throw(error);
 
    let valid_animals = result.reduce((r,o)=>{
       o.icon = o.img;
@@ -117,4 +119,18 @@ const AnimalAddPage = async() => {
    let [animal] = animals;
 
    $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
+}
+
+
+
+
+const ChooseLocationPage = async () => {
+   let map_el = await makeMap("#choose-location-page .map");
+
+   map_el.data("map").addListener("click",function(e){
+      console.log(e)
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(map_el,[e.latLng])
+   })
 }
