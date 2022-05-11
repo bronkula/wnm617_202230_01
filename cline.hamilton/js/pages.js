@@ -56,8 +56,16 @@ const ListPage = async() => {
    
    console.log(animals)
 
-   $("#list-page .animal-list").html(makeAnimalList(animals));
+   makeAnimalListSet(animals);
 }
+
+
+
+
+
+
+
+
 
 
 const UserProfilePage = async() => {
@@ -80,6 +88,24 @@ const UserEditPage = async() => {
 
    $("#user-edit-form").html(makeUserForm(user,"user-edit"))
 }
+const UserEditPhotoPage = async () => {
+   let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   })
+   let [user] = users;
+
+   $("#user-edit-photo-page .imagepicker").css({
+      "background-image":`url(${user.img})`
+   })
+}
+
+
+
+
+
+
+
 
 
 const AnimalProfilePage = async() => {
@@ -120,6 +146,21 @@ const AnimalAddPage = async() => {
 
    $("#animal-add-form").html(makeAnimalForm({},"animal-add"))
 }
+const AnimalEditPhotoPage = async () => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-edit-photo-page .imagepicker").css({
+      "background-image":`url(${animal.img})`
+   })
+}
+
+
+
+
 
 
 

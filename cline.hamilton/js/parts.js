@@ -15,12 +15,17 @@ const makeAnimalList = templater(o=>`
 
 
 const makeUserProfilePage = o => `
-<img src="${o.img}">
-<h2>${o.name}</h2>
-<div>
-   <div><strong>Username</strong> @${o.username}</div>
-   <div><strong>Email</strong> ${o.email}</div>
-   <a href="#user-settings-page">Settings</a>
+<div class="user-profile-head">
+   <img src="${o.img}">
+   <a href="#user-edit-photo-page" class="floater left bottom"><img src="img/icons/pencil.svg" class="icon"></a>
+</div>
+<div class="user-profile-body">
+   <h2>${o.name}</h2>
+   <div class="user-profile-description">
+      <div><strong>Username</strong> @${o.username}</div>
+      <div><strong>Email</strong> ${o.email}</div>
+      <a href="#user-settings-page">Settings</a>
+   </div>
 </div>
 `;
 
@@ -126,4 +131,32 @@ ${FormControlInput({
    value:user.email,
 })}
 `;
+}
+
+
+
+
+
+
+
+const makeAnimalListSet = (animals, target="#list-page .animal-list") => {
+   $(".filter-bar").html(makeFilterList(animals));
+   $(target).html(makeAnimalList(animals));
+}
+
+const capitalize = s => (s[0]||"").toUpperCase()+s.slice(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>o?`<span data-filter="${type}" data-value="${o}">${capitalize(o)}</span>`:'')(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <span data-filter="type" data-value="">All</span>
+   |
+   ${filterList(animals,'type')}
+   |
+   ${filterList(animals,'breed')}
+   `;
 }

@@ -151,6 +151,27 @@ function makeStatement($data) {
 
 
 
+
+      case "search_animals":
+         $p = ["%$p[0]%", $p[1]];
+         return makeQuery($c,"SELECT *
+            FROM `track_202230_animals`
+            WHERE
+               `name` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+
+      case "filter_animals":
+         return makeQuery($c,"SELECT *
+            FROM `track_202230_animals`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
+
+
+
+
       /* UPDATE */
 
       case "update_user":
@@ -193,6 +214,28 @@ function makeStatement($data) {
             `track_202230_locations`
             SET
                `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+
+      /* UPLOAD */
+
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_202230_users`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_animal_image":
+         $r = makeQuery($c,"UPDATE
+            `track_202230_animals`
+            SET `img` = ?
             WHERE `id` = ?
             ",$p,false);
          if(isset($r['error'])) return $r;

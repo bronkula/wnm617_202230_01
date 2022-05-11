@@ -139,15 +139,16 @@
 
 
    <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>Animal List</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-         </ul>
-      </header>
       <div data-role="main">
-         <ul class="animal-list"></ul>
+         <div class="search-bar header flex-none">
+            <form data-ajax="false" id="list-search-form" class="hotdog dark">
+               <input type="search" data-role="none" placeholder="Search For An Animal">
+            </form>
+         </div>
+         <div class="filter-bar header flex-none">
+         </div>
 
+         <ul class="animal-list"></ul>
          <a href="#animal-add-page" class="floater bottom right circle-button">&plus;</a>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
@@ -178,6 +179,7 @@
       <div data-role="main">
          <div class="animal-profile-top">
             <a href="#" class="floater bottom right js-animal-delete noclick-children"><img src="img/icons/trash.svg" class="icon"></a>
+            <a href="#animal-edit-photo-page" class="floater bottom left"><img src="img/icons/pencil.svg" class="icon"></a>
          </div>
          <div class="animal-profile-nav">
             <div class="active">Map</div>
@@ -221,6 +223,23 @@
       <div data-role="main">
          <form id="animal-edit-form" class="overscroll" data-ajax="false" style="padding:1em">
          </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="animal-edit-photo-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-animal-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="animal-edit-photo-image">
+         <label class="imagepicker replace">
+            <input type='file' id="animal-edit-photo-input" data-role="none">
+         </label>
       </div>
    </section>
 
@@ -339,6 +358,23 @@
                <button class="form-button" type="submit">Submit</button>
             </div>
          </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-edit-photo-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="user-edit-photo-image">
+         <label class="imagepicker replace">
+            <input type='file' id="user-edit-photo-input" data-role="none">
+         </label>
       </div>
    </section>
 
